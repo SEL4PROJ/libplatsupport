@@ -11,9 +11,16 @@
 #ifndef _AM335X_GPIO_H
 #define _AM335X_GPIO_H
 
+#include <platsupport/gpio.h>
+
 enum gpio_port {
+    GPIO_BANK0,
+    GPIO_BANK1,
+    GPIO_BANK2,
+    GPIO_BANK3,
     GPIO_NBANKS
 };
 
-#endif /* _AM335X_GPIO_H */
+int am335x_gpio_sys_init(void* bank0, void* bank1, void* bank2, void* bank3, gpio_sys_t* gpio_sys);
 
+#endif /* _AM335X_GPIO_H */
